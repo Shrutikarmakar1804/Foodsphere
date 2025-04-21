@@ -5,7 +5,7 @@ import { CREATE_INGREDIENTS_CATEGORY_SUCCESS, CREATE_INGREDIENTS_SUCCESS, GET_IN
 export const getIncrediantsOfRestaurant = (id, jwt) => {
     return async (dispatch) => {
         try {
-            const response = await api.get(`/api/admin/restaurant/${id}/ingredients`, {
+            const response = await api.get(`/api/admin/restaurants/${id}/ingredients`, {
                 headers: {
                     Authorization: `Bearer ${jwt}`,
                 },
@@ -43,7 +43,7 @@ export const createIngredient = ({ data, jwt }) => {
 export const createIngredientCategory = ({ id, data, jwt }) => {
     return async (dispatch) => {
         try {
-            const response = await api.post(`/api/admin/ingredients/restaurant/${id}/category`, data, {
+            const response = await api.post(`/api/admin/ingredients/restaurants/${id}/category`, data, {
                 headers: {
                     Authorization: `Bearer ${jwt}`,
                 },
@@ -62,7 +62,7 @@ export const createIngredientCategory = ({ id, data, jwt }) => {
 export const getIngredientCategory = ({ id, jwt }) => {
     return async (dispatch) => {
         try {
-            const response = await api.get(`/api/admin/ingredients/restaurant/${id}/category`, {
+            const response = await api.get(`/api/admin/ingredients/restaurants/${id}/category`, {
                 headers: {
                     Authorization: `Bearer ${jwt}`,
                 },

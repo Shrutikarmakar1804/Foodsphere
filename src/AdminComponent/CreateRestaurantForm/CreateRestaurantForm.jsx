@@ -62,8 +62,8 @@ const CreateRestaurantForm = () => {
     const file = e.target.files[0];
     setUploadImage(true)
     const image = await uploadImageToCloudinary(file)
-    console.log("image ---",image)
-    formik.setFieldValue("images",[...formik.values.images,image])
+    console.log("image ---", image)
+    formik.setFieldValue("images", [...(formik.values.images || []), image])
     setUploadImage(false)
   };
   const handleRemoveImage=(index) => {

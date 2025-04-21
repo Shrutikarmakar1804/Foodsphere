@@ -77,7 +77,7 @@ export const RegisterForm = () => {
   </Field>
 
         
-        <Button sx={{mt:2, padding:"1rem"}} className='mt-5' fullWidth type='submit' variant='contained'>Login</Button>
+        <Button sx={{mt:2, padding:"1rem"}} className='mt-5' fullWidth type='submit' variant='contained'>Register</Button>
 
       </Form>
       </Formik>

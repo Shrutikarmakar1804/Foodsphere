@@ -14,13 +14,13 @@ export const registerUser=(reqData)=>async(dispatch)=>{
         else{
             reqData.navigate("/")
         }
-        dispatch({type:REGISTER_SUCCESS,payload:data.jwt})
-        console.log("register success",data)
+        dispatch({type:REGISTER_SUCCESS, payload: { jwt: data.jwt, role: data.role }})
+        console.log("register success", data)
 
-    } catch (error){
+        } catch (error) {
         
-        dispatch({type:REGISTER_FAILURE,payload:error})
-        console.log("error", error)
+        dispatch({type:REGISTER_FAILURE, payload: error.response?.data?.message || error.message || "Registration failed"})
+        console.error("Registration error:", error.response?.data?.message || error.message || error)
     }
 }
 
@@ -42,8 +42,8 @@ export const loginUser=(reqData)=>async(dispatch)=>{
 
     } catch (error){
         
-        dispatch({type:LOGIN_FAILURE,payload:error})
-        console.log("error",error)
+        dispatch({type:LOGIN_FAILURE,payload:error.message || "Login failed"})
+        console.error("Login error:", error.message || error)
     }
 }
 
@@ -63,8 +63,8 @@ export const getUser=(jwt)=>async(dispatch)=>{
 
     } catch (error){
         
-        dispatch({type:GET_USER_FAILURE,payload:error})
-        console.log("error",error)
+        dispatch({type:GET_USER_FAILURE,payload:error.message || "Failed to fetch user"})
+        console.error("Get user error:", error.message || error)
     }
 }
 
@@ -84,8 +84,8 @@ export const addToFavorites=({jwt,restaurantId})=>async(dispatch)=>{
 
     } catch (error){
         
-        dispatch({type:ADD_TO_FAVOURITE_FAILURE,payload:error})
-        console.log("error",error)
+        dispatch({type:ADD_TO_FAVOURITE_FAILURE,payload:error.message || "Failed to add to favorites"})
+        console.error("Add to favorites error:", error.message || error)
     }
 }
 
