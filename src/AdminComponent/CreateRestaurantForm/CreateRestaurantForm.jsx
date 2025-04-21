@@ -118,7 +118,6 @@ const CreateRestaurantForm = () => {
               
 
             </div>
-            <br/>
 
           </Grid>
           
