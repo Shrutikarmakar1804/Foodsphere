@@ -5,7 +5,6 @@ import React, { useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import { uploadImageToCloudinary } from '../util/UploadToCloudinary';
 import { useDispatch } from 'react-redux';
-import { createRestaurant } from '../../component/State/Restaurant/Action';
 
 const initialValues = {
   name: "",
@@ -121,7 +120,7 @@ const CreateRestaurantForm = () => {
 
           </Grid>
           
-            <Grid item xs={12}>
+            <Grid gridColumn="span 6" >
             <TextField fullWidth
               id="name"
               name="name"
