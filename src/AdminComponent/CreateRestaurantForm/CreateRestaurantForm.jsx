@@ -32,30 +32,29 @@ const CreateRestaurantForm = () => {
   const jwt=localStorage.getItem("jwt");
   const formik=useFormik({
     initialValues,
-    onSubmit: (values) =>{
-      const data={
-        name:values.name,
-        description:values.description,
-        cuisineType:values.cuisineType,
-        address:{
-          streetAddress:values.streetAddress,
-          city:values.city,
-          stateProvince:values.stateProvince,
-          postalCode:values.postalCode,
-          country:values.country
+    onSubmit: (values) => {
+      const data = {
+        name: values.name,
+        description: values.description,
+        cuisineType: values.cuisineType,
+        address: {
+          streetAddress: values.streetAddress,
+          city: values.city,
+          stateProvince: values.stateProvince,
+          postalCode: values.postalCode,
+          country: values.country,
         },
-        contactInformation:{
-          email:values.email,
-          mobile:values.mobile,
-          X:values.X,
-          instagram:values.instagram
+        contactInformation: {
+          email: values.email,
+          mobile: values.mobile,
+          X: values.X,
+          instagram: values.instagram,
         },
-        openingHours:values.openingHours,
-        images:values.images,      
+        openingHours: values.openingHours,
+        images: values.images,
       };
-      console.log("data ---",data)
-
-      dispatch(createRestaurant({data,token:jwt}))
+      console.log("data ---", data);
+      // dispatch(createRestaurant({ data, token: jwt }));
     },
     });
   const handleImageChange = async(e) => {
@@ -119,6 +118,7 @@ const CreateRestaurantForm = () => {
               
 
             </div>
+            <br/>
 
           </Grid>
           

@@ -8,7 +8,7 @@ export const findCart =(token)=>{
         try{
             const response = await api.get(`/api/cart`,{
                 headers:{
-                    Authorizartion:`Bearer ${token}`
+                    Authorization:`Bearer ${token}`
             },
         });
         console.log("my cart",response.data);

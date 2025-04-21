@@ -96,7 +96,8 @@ dispatch({type:GET_RESTAURANT_BY_USER_ID_SUCCESS,payload:data});
         return async(dispatch)=>{
             dispatch({type:CREATE_RESTAURANT_REQUEST});
             try{
-                const {data}=await api.post(`/api/admin/restaurants`,reqData.data,{
+                const {data}=await api.post(`/api/admin/restaurants`,
+                    reqData.data,{
                     headers:{
                         Authorization:`Bearer ${reqData.token}`,
         },
