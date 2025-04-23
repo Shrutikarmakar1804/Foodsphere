@@ -1,7 +1,7 @@
 import React from 'react';
-// import { Card } from '@/components/ui/card';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import { green } from '@mui/material/colors';
+import { Card } from '@mui/material';
 
 const PaymentSuccess = () => {
   return (

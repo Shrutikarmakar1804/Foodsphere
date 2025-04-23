@@ -1,4 +1,4 @@
-import { Button, Card } from '@mui/material'
+import { Card } from '@mui/material'
 import React from 'react'
 
 const OrderCard = ({item,order}) => {
@@ -16,7 +16,7 @@ const OrderCard = ({item,order}) => {
         </div>
       </div>
       <div>
-        <button  className="cursor-not-allowed text-green-400">{order.orderStatus}</button>
+        <button  className="cursor-allowed text-green-400">{order.orderStatus}</button>
       </div>
       
     </Card>
