@@ -7,10 +7,10 @@ export const RestaurantDashboard = () => {
   return (
     <div>
       <Grid container spacing={2}>
-        <Grid item xs={12} lg={6}>
+        <Grid size= {{ xs:12, lg:6 }} >
 <MenuTable/>
         </Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid size= {{ xs:12, lg:6 }} >
 <OrderTable/>
         </Grid>
 

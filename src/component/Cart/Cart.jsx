@@ -131,7 +131,7 @@ const Cart = () => {
     >
       <Form>
       <Grid container spacing={2}>
-       <Grid item xs={12}>
+       <Grid size= {{ xs:12 }} >
           <Field 
           as={TextField}
           name="streetAddress"
@@ -146,7 +146,7 @@ const Cart = () => {
           // } 
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size= {{ xs:12 }} >
           <Field 
           as={TextField}
           name="state"
@@ -161,7 +161,7 @@ const Cart = () => {
           // } 
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size= {{ xs:12 }} >
           <Field 
           as={TextField}
           name="city"
@@ -176,7 +176,7 @@ const Cart = () => {
           // } 
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size= {{ xs:12 }} >
           <Field 
           as={TextField}
           name="pincode"
@@ -191,7 +191,7 @@ const Cart = () => {
           // } 
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size= {{ xs:12 }} >
           <Button fullWidth variant="contained" type="submit" color="primary">
              Deliver Here 
           </Button>

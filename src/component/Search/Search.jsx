@@ -1,26 +1,38 @@
-import { Button } from '@mui/material'
-import React from 'react'
+import React from "react";
+import { Search as SearchIcon } from "lucide-react";
+import { Button } from "@mui/material";
+
+ // Adjust this path to your button component
 
 const Search = () => {
   return (
-    
-    <div className="min-h-screen bg-black text-white items-center">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center">
       {/* Header with Search Bar */}
-      <header className="p-8  items-center justify-center">
-        <div className="relative w-full max-w-3xl">
+      <header className="p-8 w-full flex justify-center">
+        <div className="relative w-full max-w-3xl flex items-center">
           <input
             type="text"
             placeholder="Search for cuisines or dishes..."
-            className="w-full px-4 py-2 text-black rounded-lg focus:outline-none"
+            className="w-full px-4 py-2 text-black bg-white rounded-lg focus:outline-none"
           />
-          <Button className="absolute right-3 top-2.5 text-black"></Button>
+          <Button
+            sx={{
+              position: "absolute",
+              right: "8px",
+              top: "10px",
+              color: "black",
+              padding: "3px",
+            }}
+          >
+            <SearchIcon size={20} />
+          </Button>
         </div>
       </header>
 
-      {/* Popular Cuisines */}
-      <section className="p-8">
+      {/* Popular Cuisines
+      <section className="p-8 w-full">
         <h2 className="text-xl mb-4 font-semibold">Popular Cuisines</h2>
-        <div className="flex space-x-6 overflow-x-auto scrollbar-hidden">
+        <div className="flex space-x-6 overflow-x-auto no-scrollbar">
           {[
             { name: "Pizza", img: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=600" },
             { name: "Burger", img: "https://images.pexels.com/photos/1108117/pexels-photo-1108117.jpeg?auto=compress&cs=tinysrgb&w=600" },
@@ -45,10 +57,10 @@ const Search = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
-            {/* Restaurant Cards */}
-            <section className="px-8 pb-8">
+      {/* Restaurant Cards */}
+      {/* <section className="px-8 pb-8 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
@@ -81,7 +93,7 @@ const Search = () => {
           ].map((restaurant, index) => (
             <div
               key={index}
-              className="bg-gray-800 rounded-lg p-4 flex justify-between items-start"
+              className="bg-gray-800 rounded-lg p-6 flex justify-between items-start gap-4"
             >
               <div>
                 <h3 className="text-lg font-bold">{restaurant.name}</h3>
@@ -99,15 +111,14 @@ const Search = () => {
                   alt="Dish"
                   className="w-16 h-16 rounded-md object-cover mb-2"
                 />
-<Button variant="contained" disabled={false} type="submit">{true?"Add":"Out of Stock"}</Button>
+                <Button variant="contained" type="submit">Add</Button>
               </div>
             </div>
           ))}
         </div>
-      </section>
-
+      </section> */}
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

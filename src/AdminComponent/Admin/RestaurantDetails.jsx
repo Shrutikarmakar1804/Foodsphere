@@ -37,9 +37,9 @@ export const RestaurantDetails = () => {
           </div>
       </div>
         <Grid container spacing={3}>
-          <Grid item xs={12} lg={6}>
+          <Grid size= {{ xs:12, lg:6 }} >
           </Grid>
-          <Grid item xs={12}>
+          <Grid size= { 12 } >
 
             <Card>
               <CardHeader 
@@ -90,9 +90,9 @@ export const RestaurantDetails = () => {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} lg={6}>
+          <Grid size= {{ xs:12, lg:6 }} >
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid size= {{ xs:12, lg:6 }}>
               <Card>
               <CardHeader 
                 title={<span className="text-gray-300"> Address </span>}

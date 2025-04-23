@@ -120,7 +120,7 @@ const CreateRestaurantForm = () => {
 
           </Grid>
           
-            <Grid gridColumn="span 6" >
+          <Grid size={{ xs:12 }} >
             <TextField fullWidth
               id="name"
               name="name"
@@ -130,7 +130,7 @@ const CreateRestaurantForm = () => {
               value={formik.values.name}
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={{ xs:12 }} >
             <TextField fullWidth              
               id="description"
               name="description"
@@ -142,7 +142,7 @@ const CreateRestaurantForm = () => {
 
           </Grid>
           
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12}}>
             <TextField fullWidth
             id="cuisineType"
             name="cuisineType"
@@ -157,28 +157,28 @@ const CreateRestaurantForm = () => {
           </Grid>
           
 
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
         <TextField fullWidth
+          id="email"
+          name="email"
+          label="Email"
+          variant="outlined"
+          onChange={formik.handleChange}
+          value={formik.values.email}
+        />
+      </Grid>
+      <Grid size={{ xs: 12 }}>
+        <TextField fullWidth
+          label="Street Address"
           id="streetAddress"
           name="streetAddress"
-          label="Street Address"
-          variant="outlined"
           onChange={formik.handleChange}
           value={formik.values.streetAddress}
         />
       </Grid>
-      <Grid item xs={12}>
-        <TextField fullWidth
-          label="City"
-          id="city"
-          name="city"
-          onChange={formik.handleChange}
-          value={formik.values.city}
-        />
-      </Grid>
 
 
-          <Grid item xs={12}>
+          <Grid size={{ xs: 6 }} >
             <TextField fullWidth
             label="State Province"
             id="stateProvince"
@@ -191,7 +191,7 @@ const CreateRestaurantForm = () => {
             </TextField>
 
           </Grid>
-          <Grid item xs={12} lg={6}>
+          <Grid size={{ xs: 6 }} >
             <TextField fullWidth
             label="Postal Code"
             id="postalCode"
@@ -205,7 +205,7 @@ const CreateRestaurantForm = () => {
 
           </Grid>
 
-          <Grid item xs={12} lg={6}>
+          <Grid size={{ xs: 6 }}>
             <TextField fullWidth
             label="Country"
             id="country"
@@ -219,21 +219,21 @@ const CreateRestaurantForm = () => {
 
           </Grid>
 
-          <Grid item xs={12} lg={6}>
+          <Grid size={{ xs: 6 }}>
             <TextField fullWidth
-            label="Email"
-            id="email"
-            name="email"
+            label="City"
+            id="city"
+            name="city"
             variant="outlined"
             onChange={formik.handleChange}
-            value={formik.values.email}
+            value={formik.values.city}
             >
 
             </TextField>
 
           </Grid>
 
-          <Grid item xs={12} lg={6}>
+          <Grid size={{ xs: 6 }}>
             <TextField fullWidth
             label="Phone Number"
             id="mobile"
@@ -247,7 +247,7 @@ const CreateRestaurantForm = () => {
 
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={{ xs: 6 }}>
             <TextField fullWidth
             label="Opening Hours"
             id="openingHours"
@@ -261,7 +261,7 @@ const CreateRestaurantForm = () => {
 
           </Grid>
 
-          <Grid  item xs={12}>
+          <Grid  size={{ xs: 6 }}>
             <TextField fullWidth
             label="Closing Hours"
             id="closingHours"
@@ -275,7 +275,7 @@ const CreateRestaurantForm = () => {
 
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <TextField fullWidth
             label="X(Twitter)"
             id="X"
@@ -289,7 +289,7 @@ const CreateRestaurantForm = () => {
 
           </Grid>
 
-          <Grid item xs={12} lg={6}>
+          <Grid size={{ xs: 6 }}>
             <TextField fullWidth
             label="Instagram"
             id="instagram"
@@ -297,6 +297,20 @@ const CreateRestaurantForm = () => {
             variant="outlined"
             onChange={formik.handleChange}
             value={formik.values.instagram}
+            >
+
+            </TextField>
+
+          </Grid>
+
+          <Grid size={{ xs: 6 }}>
+            <TextField fullWidth
+            label="Facebook"
+            id="facebook"
+            name="facebook"
+            variant="outlined"
+            onChange={formik.handleChange}
+            value={formik.values.facebook}
             >
 
             </TextField>

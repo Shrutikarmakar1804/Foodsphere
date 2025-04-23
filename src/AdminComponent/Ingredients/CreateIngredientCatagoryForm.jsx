@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 const CreateIngredientCategoryForm = () => {
     const dispatch = useDispatch(); 
         const jwt = localStorage.getItem("jwt");
-        const { restaurant } = useSelector(store=>store)
+        const { restaurant } = useSelector(state=>state.item)
     const [formData, setFormData] = useState({
         name:"",
     });

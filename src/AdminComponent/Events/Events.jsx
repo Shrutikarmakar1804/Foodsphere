@@ -69,7 +69,7 @@ export const Events = () => {
         <Box sx={style}>
           <form onSubmit={handleSubmit}>
             <Grid container spacing={3}>
-              <Grid item xs={12}>
+              <Grid size= {{ xs:12 }} >
                 <TextField
                 name="image"
                 label="Image URL"
@@ -80,7 +80,7 @@ export const Events = () => {
                 <Grid>
               <br/>
 
-                <Grid item xs={12}>
+                <Grid size= {{ xs:12 }} >
                     <TextField
                       name="location"
                       label="Location"
@@ -92,7 +92,7 @@ export const Events = () => {
                 </Grid>
                 <br/>
 
-                <Grid item xs={12}>
+                <Grid size= {{ xs:12 }} >
                     <TextField
                       name="name"
                       label="Event Name"
@@ -104,7 +104,7 @@ export const Events = () => {
                 </Grid>
                 <br/>
 
-                <Grid item xs={12}>
+                <Grid size= {{ xs:12 }} >
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                       <DateTimePicker
                       renderInput={(props)=> <TextField {...props}/>}
@@ -120,7 +120,7 @@ export const Events = () => {
                 </Grid>
                 <br/>
 
-                <Grid item xs={12}>
+                <Grid size= {{ xs:12 }} >
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                       <DateTimePicker
                       renderInput={(props)=> <TextField {...props}/>}

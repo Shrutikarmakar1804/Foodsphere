@@ -61,7 +61,7 @@ const CreateMenuForm = () => {
       </h1>
       <form onSubmit={formik.handleSubmit} className="spy-5">
         <Grid container spacing={5}>
-          <Grid className="flex flex-wrap gap-3" item xs={12} lg={6}>
+          <Grid className="flex flex-wrap gap-3" size= {{ xs:12, lg:6 }} >
               <input
               accept='image/*'
               id='fileinput'
@@ -102,7 +102,7 @@ const CreateMenuForm = () => {
             
 
           </Grid>
-          <Grid item xs={12}>
+          <Grid size= {{ xs:12 }} >
             <TextField fullWidth
             label="Name"
             id="name"
@@ -113,7 +113,7 @@ const CreateMenuForm = () => {
             </TextField>
 
           </Grid>
-          <Grid item xs={12}>
+          <Grid size= {{ xs:12 }} >
             <TextField fullWidth
             label="Description"
             id="description"
@@ -125,7 +125,7 @@ const CreateMenuForm = () => {
             </TextField>
 
           </Grid>
-          <Grid item xs={12}>
+          <Grid size= {{ xs:12 }} >
             <TextField fullWidth
             label="Price"
             id="price"
@@ -138,7 +138,7 @@ const CreateMenuForm = () => {
             </TextField>
 
           </Grid>
-          <Grid item xs={12} >
+          <Grid size= {{ xs:12 }} >
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label"> Category </InputLabel>
                 <Select
@@ -156,7 +156,7 @@ const CreateMenuForm = () => {
               </FormControl>
               </Grid>
 
-              <Grid item xs={12}>
+              <Grid size= {{ xs:12  }} >
             <TextField fullWidth
             label="RestaurantId"
             id="restaurantId"
@@ -170,7 +170,7 @@ const CreateMenuForm = () => {
 
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size= {{ xs:12 }} >
           <FormControl fullWidth>
         <InputLabel id="demo-multiple-chip-label">Ingredients</InputLabel>
         <Select
@@ -203,7 +203,7 @@ const CreateMenuForm = () => {
 
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size= {{ xs:12 }} >
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label"> Non-Vegetarian</InputLabel>
                 <Select
@@ -221,7 +221,7 @@ const CreateMenuForm = () => {
               </FormControl>
               </Grid>
 
-          <Grid item xs={12}>
+          <Grid size= {{ xs:12 }} >
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label"> Seasonal</InputLabel>
                 <Select
@@ -239,7 +239,7 @@ const CreateMenuForm = () => {
               </FormControl>
               </Grid>
 
-              <Grid item xs={12}>
+              <Grid size= {{ xs:12, lg:6 }} >
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Vegetarian</InputLabel>
                 <Select

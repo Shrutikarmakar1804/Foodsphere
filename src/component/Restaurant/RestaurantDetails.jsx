@@ -61,19 +61,19 @@ const RestaurantDetails = () => {
       <h3 className="text-gray-500 py-2 mt-10">Home/India/fast food Hub</h3>
       <div>
           <Grid container spacing={2}>
-              <Grid item xs={12} lg={6}>
+              <Grid size= {{ xs:12, lg:6 }} >
                   <img className="w-full h-[40vh] object-cover" src={restaurant.restaurant?.images[0]} alt="" />
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid size= {{ xs:12, lg:6 }} >
                   <img className="w-full h-[40vh] object-cover" src={restaurant.restaurant?.images[1]} alt="" />
 
               </Grid>
 
-           <Grid item xs={12} lg={6}>
+           <Grid size= {{ xs:12, lg:6 }} >
                   <img className="w-full h-[40vh] object-cover" src={restaurant.restaurant?.images[2]} alt="" />
 
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid size= {{ xs:12, lg:6 }} >
                     <img className="w-full h-[40vh] object-cover" src={restaurant.restaurant?.images[3]} alt="" />
 
                 </Grid>

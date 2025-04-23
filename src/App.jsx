@@ -17,7 +17,7 @@ window.process = process;
 function App() {
   const dispatch=useDispatch()
   const jwt=localStorage.getItem("jwt")
-  const {auth}=useSelector(store=>store)
+  const {auth}=useSelector(state=> state)
 
   useEffect(()=>{
     dispatch(getUser(auth.jwt || jwt));
