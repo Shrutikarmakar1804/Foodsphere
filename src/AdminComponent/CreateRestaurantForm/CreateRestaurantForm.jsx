@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import { uploadImageToCloudinary } from '../util/UploadToCloudinary';
 import { useDispatch } from 'react-redux';
+import { createRestaurant } from '../../component/State/Restaurant/Action';
 
 const initialValues = {
   name: "",
@@ -53,7 +54,7 @@ const CreateRestaurantForm = () => {
         images: values.images,
       };
       console.log("data ---", data);
-      // dispatch(createRestaurant({ data, token: jwt }));
+      dispatch(createRestaurant({ data, token: jwt }));
     },
     });
   const handleImageChange = async(e) => {

@@ -1,96 +1,130 @@
-import { Button, MenuItem, Select, TextField, Typography } from '@mui/material'
-import { Field, Form, Formik } from 'formik'
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Box, Button, MenuItem, Select, TextField, Typography } from '@mui/material';
+import { Field, Form, Formik } from 'formik';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../State/Authentication/Action';
 import { useDispatch } from 'react-redux';
+import { motion } from 'framer-motion';
 
-const intialvalues={
-  fullName:"",
-  email:"",
-  password:"",
-  role:"",
+const initialvalues = {
+  fullName: '',
+  email: '',
+  password: '',
+  role: '',
 };
 
 export const RegisterForm = () => {
-  const navigate=useNavigate();
-  const dispatch=useDispatch()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = (values) => {
     console.log("form values", values);
     dispatch(registerUser({ userData: values, navigate }));
-  }
+  };
+
   return (
     <div>
-      
-    <Typography variant='h5' className='text-center'>
-      Register
-    </Typography>
+    {/* <Box
+         display="flex"
+         justifyContent="center"
+         alignItems="center"
+         height="87%"
+         position="absolute"
+         borderRadius={2}
+         boxShadow={3}
+         width="90%"
+         sx={{
+           backgroundImage: 'url("/your-background-image.png")',
+           backgroundSize: 'cover',
+           backgroundPosition: 'center',
+           px: 2,
+         }}
+    > */}
 
-      <Formik onSubmit={handleSubmit} initialValues={intialvalues}>
-
-      <Form>
-
-      <Field
-        as={TextField}
-        name="fullName"
-        label="FULL NAME"
-        fullWidth
-        variant="outlined" 
-        margin="normal"
-        
-        />
-
-      <Field
-        as={TextField}
-        name="email"
-        label="Email"
-        fullWidth
-        variant="outlined" 
-        margin="normal"
-       
-         />
-
-      <Field
-        as={TextField}
-        name="password"
-        label="Password"
-        fullWidth
-        variant="outlined" 
-        margin="normal"
-       
-        />
-
-  <Field name="role">
-    {({ field }) => (
-      <Select
-        {...field}
-        fullWidth
-        margin="normal"
-        labelId="role-simple-select-label"
-        id="demo-simple-select"
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <MenuItem value={"ROLE_CUSTOMER"}>Customer</MenuItem>
-        <MenuItem value={"ROLE_RESTAURANT_OWNER"}>Restaurant Owner</MenuItem>
-      </Select>
-    )}
-  </Field>
+        {/* <Box
+          width={{ xs: '100%', sm: '500px' }}
+          p={4}
+          boxShadow={3}
+          borderRadius={2}
+          bgcolor="black"
+        > */}
+          <Typography variant="h5" align="center">
+            Register
+          </Typography>
 
-        
-        <Button sx={{mt:2, padding:"1rem"}} className='mt-5' fullWidth type='submit' variant='contained'>Register</Button>
+          <Formik onSubmit={handleSubmit} initialValues={initialvalues}>
+            <Form>
+              <Field
+                as={TextField}
+                name="fullName"
+                label="FULL NAME"
+                fullWidth
+                variant="outlined"
+                margin="normal"
+              />
+              <Field
+                as={TextField}
+                name="email"
+                label="Email"
+                fullWidth
+                variant="outlined"
+                margin="normal"
+              />
+              <Field
+                as={TextField}
+                name="password"
+                label="Password"
+                type="password"
+                fullWidth
+                variant="outlined"
+                margin="normal"
+              />
+              <Field name="role">
+                {({ field }) => (
+                  <Select
+                    {...field}
+                    fullWidth
+                    margin="normal"
+                    displayEmpty
+                    variant="outlined"
+                    sx={{ mt: 2 }}
+                  >
+                   
+                    <MenuItem value="ROLE_CUSTOMER">Customer</MenuItem>
+                    <MenuItem value="ROLE_RESTAURANT_OWNER">Restaurant Owner</MenuItem>
+                  </Select>
+                )}
+              </Field>
 
-      </Form>
-      </Formik>
+              <Button
+                sx={{ mt: 3, py: 1.5 }}
+                fullWidth
+                type="submit"
+                variant="contained"
+              >
+                Register
+              </Button>
+            </Form>
+          </Formik>
 
-      <Typography variant='body2' align='center' sx={{mt:3}}>
-          If you have an account already?
-          <Button size='small' onClick={()=>navigate("/account/login")}>
+          <Typography variant="body2" align="center" sx={{ mt: 3 }}>
+            Already have an account?{' '}
+            <Button size="small" onClick={() => navigate('/account/login')}
+              sx={{ ml: 1 }}
+              color="primary">
               Login
-          </Button>
-      </Typography>
+            </Button>
+          </Typography>
+        {/* </Box> */}
+      </motion.div>
+    {/* </Box> */}
+    </div>
+  );
+};
 
-  </div>
-  )
-}
-
-export default RegisterForm
+export default RegisterForm;

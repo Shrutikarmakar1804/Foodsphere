@@ -25,7 +25,7 @@ const RestaurantDetails = () => {
       const{ auth,restaurant,menu}=useSelector(store=>store)
       const[selectedCategory,setSelectedCategory]=useState("")
     
-    const {id,city}=useParams()
+    const {restaurantId,city}=useParams()
 
     const handleFilter=(e)=>{
         setFoodType(e.target.value)
@@ -41,12 +41,12 @@ const RestaurantDetails = () => {
     console.log("restaurant",restaurant)
 
     useEffect(()=>{
-        dispatch(getRestaurantById({jwt,restaurantId:id}))
-        dispatch(getRestaurantCategory({jwt,restaurantId:id}))
+        dispatch(getRestaurantById({jwt,restaurantId:restaurantId}))
+        dispatch(getRestaurantCategory({jwt,restaurantId:restaurantId}))
         
     },[])
     useEffect(()=>{
-        dispatch(getMenuItemsByRestaurantId({jwt,restaurantId:id,
+        dispatch(getMenuItemsByRestaurantId({jwt,restaurantId:restaurantId,
             vegetarian:foodType==="vegitarian"?true:false,
             nonveg:foodType==="non-vegitarian"?true:false,
             seasonal:foodType==="seasonal"?true:false,
@@ -165,4 +165,4 @@ const RestaurantDetails = () => {
   )
 }
 
-export default RestaurantDetails
+export default RestaurantDetails;

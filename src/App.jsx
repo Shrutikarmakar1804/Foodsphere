@@ -24,9 +24,8 @@ function App() {
     dispatch(findCart(jwt));
   },[auth.jwt]);
 
-  useDispatch(() => {
+  useEffect(() => {
     dispatch(getRestaurantById(auth.jwt || jwt));
-
   }, [auth.user])
 
   return (

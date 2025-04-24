@@ -3,7 +3,6 @@ import {
   TextField,
   Typography,
   Box,
-  Paper,
 } from '@mui/material';
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
@@ -11,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../State/Authentication/Action';
 import { useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
+
 
 const initialValues = {
   email: '',
@@ -27,40 +27,37 @@ export const LoginForm = () => {
   };
 
   return (
-    <Box
-         display="flex"
-         justifyContent="center"
-         alignItems="center"
-         height="87%"
-          position="absolute"
-          borderRadius={2}
-          boxShadow={3}
-         width="90%"
-          sx={{
-            backgroundImage: 'url("/your-background-image.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            px: 2,
-          }}
->
+    <div>
+   {/* <div
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height="87%"
+             position="absolute"
+             borderRadius={2}
+             boxShadow={3}
+            width="90%"
+             sx={{
+               backgroundImage: 'url("/your-background-image.png")',
+               backgroundSize: 'cover',
+               backgroundPosition: 'center',
+               px: 2,
+             }}
+           
+          > */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 2, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-       style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
       >
-        <Paper
-          elevation={10}
-          sx={{
-            width: { xs: '60%', md: '80%', lg: '100%' },
-            p: 4,
-            backgroundColor: 'rgba(0,0,0,0.85)',
-            color: '#fff',
-            borderRadius: '3',
-            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
-          }}
-        >
-          <Typography variant="h4" align="center" gutterBottom>
+        <div
+                 width={{ xs: '90%', sm: '500px' }}
+                 p={4}
+                 boxShadow={3}
+                 borderRadius={2}
+                 bgcolor="black"
+               >
+          <Typography variant="h5" className='text-center'>
             Login
           </Typography>
 
@@ -84,7 +81,7 @@ export const LoginForm = () => {
                 margin="normal"
               />
               <Button
-                sx={{ mt: 3, py: 1.2 }}
+                sx={{ mt: 3, padding: "1rem" }}
                 fullWidth
                 type="submit"
                 variant="contained"
@@ -100,25 +97,16 @@ export const LoginForm = () => {
             <Button
               size="small"
               onClick={() => navigate("/account/register")}
-              sx={{ ml: 1 }}
-              color="secondary"
+              // sx={{ ml: 1 }}
+              color="primary"
             >
               Register
             </Button>
           </Typography>
-          <Typography variant="body2" align="center" sx={{ mt: 1 }}>
-            <Button
-              size="small"
-              onClick={() => navigate("/account/forgot-password")}
-              sx={{ ml: 1 }}
-              color="secondary"
-            >
-              Forgot Password?
-            </Button>
-          </Typography>
-        </Paper>
+        </div>
       </motion.div>
-    </Box>
+    </div>
+    // </div>
   );
 };
 
