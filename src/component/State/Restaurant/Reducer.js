@@ -17,7 +17,7 @@ const restaurantreducer = (state = initialState, action) => {
         case actionTypes.DELETE_RESTAURANT_REQUEST:
         case actionTypes.UPDATE_RESTAURANT_REQUEST:
         case actionTypes.GET_RESTAURANT_BY_USER_ID_REQUEST:
-        case actionTypes.CRAETE_CATEGORY_REQUEST:
+        case actionTypes.CREATE_CATEGORY_REQUEST:
         case actionTypes.GET_RESTAURANT_CATEGORY_REQUEST:
             return {
                 ...state,
@@ -84,7 +84,7 @@ const restaurantreducer = (state = initialState, action) => {
                             event: state.event.filter((item) => item.id !== action.payload),
                             restaurantEvent: state.restaurantEvent.filter((item) => item.id !== action.payload),
                         };
-                        case actionTypes.CRAETE_CATEGORY_SUCCESS:
+                        case actionTypes.CREATE_CATEGORY_SUCCESS:
                         return {
                             ...state,
                             loading: false,
@@ -101,7 +101,7 @@ const restaurantreducer = (state = initialState, action) => {
                         case actionTypes.DELETE_RESTAURANT_FAILURE:
                         case actionTypes.UPDATE_RESTAURANT_FAILURE:
                         case actionTypes.GET_RESTAURANT_BY_USER_ID_FAILURE:
-                        case actionTypes.CRAETE_CATEGORY_FAILURE:
+                        case actionTypes.CREATE_CATEGORY_FAILURE:
                         case actionTypes.CREATE_EVENT_FAILURE:
                         case actionTypes.GET_RESTAURANT_CATEGORY_FAILURE:
                             return {

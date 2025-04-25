@@ -4,15 +4,12 @@ import MultiItemCarousel from './MultiItemCorusel'
 import RestaurantCard from '../Restaurant/RestaurantCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllRestaurantAction } from '../State/Restaurant/Action'
-import { useNavigate } from 'react-router-dom'
-import { findCart } from '../State/Cart/Action'
 
 
- const restaurants=[1,1]
-  const Home = () => {
-    const dispatch=useDispatch()
-    const jwt=localStorage.getItem("jwt")
-    const {restaurants}=useSelector(store=>store)
+const Home = () => {
+  const dispatch=useDispatch()
+  const jwt=localStorage.getItem("jwt")
+  const {restaurants}=useSelector(store=>store)
   
     
     
@@ -39,7 +36,7 @@ import { findCart } from '../State/Cart/Action'
             </div>
         </section>
          <section className='p-10 lg:py-10 lg:px-20'>
-          <p className='text-2xl font-semibond text-gray-400 py-3 pb-10'>Top Meals</p>
+          <p className='text-2xl font-semibond text-gray-400 py-3 pb-10'>What's on your mind?</p>
          <MultiItemCarousel/>
          </section>
          <section className='px-5 lg:px-20 pt-10'>

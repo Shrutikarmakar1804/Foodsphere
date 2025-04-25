@@ -2,7 +2,6 @@ import {
   Button,
   TextField,
   Typography,
-  Box,
 } from '@mui/material';
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
@@ -10,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../State/Authentication/Action';
 import { useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
-
 
 const initialValues = {
   email: '',
@@ -28,7 +26,8 @@ export const LoginForm = () => {
 
   return (
     <div>
-   {/* <div
+      
+   <div
             display="flex"
             justifyContent="center"
             alignItems="center"
@@ -44,18 +43,20 @@ export const LoginForm = () => {
                px: 2,
              }}
            
-          > */}
+          >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 2, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <div
                  width={{ xs: '90%', sm: '500px' }}
                  p={4}
                  boxShadow={3}
+                 
                  borderRadius={2}
-                 bgcolor="black"
+                 bgcolor="black" 
+
                >
           <Typography variant="h5" className='text-center'>
             Login
@@ -106,7 +107,7 @@ export const LoginForm = () => {
         </div>
       </motion.div>
     </div>
-    // </div>
+    </div>
   );
 };
 

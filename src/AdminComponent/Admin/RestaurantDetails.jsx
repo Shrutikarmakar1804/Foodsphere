@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateRestaurantStatus } from '../../component/State/Restaurant/Action';
 
 export const RestaurantDetails = () => {
-  const { restaurant } = useSelector(store => store || { restaurant: { usersRestaurant: {} } });
+  const {restaurant} = useSelector((store) => store);
   const dispatch = useDispatch()
 
   

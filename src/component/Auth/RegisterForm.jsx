@@ -24,11 +24,11 @@ export const RegisterForm = () => {
 
   return (
     <div>
-    {/* <Box
+    <div
          display="flex"
          justifyContent="center"
          alignItems="center"
-         height="87%"
+         height="100%"
          position="absolute"
          borderRadius={2}
          boxShadow={3}
@@ -39,20 +39,20 @@ export const RegisterForm = () => {
            backgroundPosition: 'center',
            px: 2,
          }}
-    > */}
+    >
 
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* <Box
+        <div
           width={{ xs: '100%', sm: '500px' }}
           p={4}
           boxShadow={3}
           borderRadius={2}
           bgcolor="black"
-        > */}
+        >
           <Typography variant="h5" align="center">
             Register
           </Typography>
@@ -102,7 +102,7 @@ export const RegisterForm = () => {
               </Field>
 
               <Button
-                sx={{ mt: 3, py: 1.5 }}
+                sx={{ mt: 3, padding: "1rem" }}
                 fullWidth
                 type="submit"
                 variant="contained"
@@ -112,17 +112,17 @@ export const RegisterForm = () => {
             </Form>
           </Formik>
 
-          <Typography variant="body2" align="center" sx={{ mt: 3 }}>
-            Already have an account?{' '}
+          <Typography variant="body2" align="center" sx={{ mt: 4 }}>
+            Already have an account?
             <Button size="small" onClick={() => navigate('/account/login')}
-              sx={{ ml: 1 }}
+              // sx={{ ml: 1 }}
               color="primary">
               Login
             </Button>
           </Typography>
-        {/* </Box> */}
+        </div>
       </motion.div>
-    {/* </Box> */}
+    </div>
     </div>
   );
 };

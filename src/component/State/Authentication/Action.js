@@ -19,8 +19,9 @@ export const registerUser=(reqData)=>async(dispatch)=>{
 
         } catch (error) {
         
-        dispatch({type:REGISTER_FAILURE, payload: error.response?.data?.message || error.message || "Registration failed"})
-        console.error("Registration error:", error.response?.data?.message || error.message || error)
+        const errorMessage = error.response?.data?.message || error.message || "Registration failed";
+        dispatch({type:REGISTER_FAILURE, payload: errorMessage})
+        console.error("Registration error:", errorMessage, error)
     }
 }
 

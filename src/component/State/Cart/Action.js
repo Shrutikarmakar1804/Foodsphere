@@ -6,10 +6,10 @@ export const findCart =(token)=>{
     return async(dispatch)=>{
         dispatch({type:FIND_CART_REQUEST});
         try{
-            const response = await api.get(`/api/cart`,{
-                headers:{
-                    Authorization:`Bearer ${token}`
-            },
+        const response = await api.get(`/api/cart`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
         });
         console.log("my cart",response.data);
         dispatch({type:FIND_CART_SUCCESS,payload:response.data});
@@ -27,7 +27,7 @@ export const findCart =(token)=>{
             try{
                 const {data} = await api.get(`/cart/items`,{
                     headers:{
-                        Authorizartion:`Bearer ${token}`
+                        Authorization:`Bearer ${token}`
             },
         });
         dispatch({type:GET_ALL_CART_ITEM_SUCCESS,payload:data});
@@ -47,7 +47,7 @@ export const findCart =(token)=>{
                         quantity
                     },{
                         headers:{
-                            Authorizartion:`Bearer ${token}`
+                            Authorization:`Bearer ${token}`
                 },
             });
             dispatch({type:ADD_ITEM_TO_CART_SUCCESS,payload:data});
@@ -85,7 +85,7 @@ export const findCart =(token)=>{
                     try{
                         const {data} = await api.delete(`/api/cart/item/remove/${itemId}`,{
                             headers:{
-                                Authorizartion:`Bearer ${jwt}`
+                                Authorization:`Bearer ${jwt}`
                         },
                     });
                     dispatch({type:REMOVE_CART_ITEM_SUCCESS,payload:data});
@@ -103,7 +103,7 @@ export const findCart =(token)=>{
                         try{
                             const {data} = await api.put(`/api/cart/clear`,{
                                 headers:{
-                                    Authorizartion:`Bearer ${localStorage.getItem("jwt")}`
+                                    Authorization:`Bearer ${jwt}`
                             },
                         });
                         dispatch({type:CLEARE_CART_SUCCESS,payload:data});
