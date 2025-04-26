@@ -8,6 +8,12 @@ import { Navbar } from '../Navbar/Navbar'
 import Auth from '../Auth/Auth'
 import Search from '../Search/Search'
 import PaymentSuccess from '../PaymentSuccess/paymentsuccess'
+import Offers from '../Offers/Offers'
+import Help from '../Help/Help'
+import Contact from '../Contact/Contact'
+import About from '../About/About'
+
+
 
 const CustomerRoute = () => {
   return (
@@ -21,6 +27,11 @@ const CustomerRoute = () => {
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/my-profile/*' element={<Profile/>}/>
             <Route path='/payment/success/:id*' element={<PaymentSuccess/>}/>
+            <Route path="/help" element={<Help />} />
+            <Route path='/contact' element={<Contact/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/offers' element={<Offers/>}/>
+            
             
             
       </Routes>

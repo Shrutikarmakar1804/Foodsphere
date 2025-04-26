@@ -13,8 +13,9 @@ const EventCard = () => {
             <Typography variant='h5' className='text-blue-500'>
             Food Truck Festival
             </Typography>
-            <Typography variant='body2' className='text-gray-400'>
-            A gathering of various food trucks offering cuisines from all over the world, including Mexican, Italian, and local specialties. Enjoy live music and a casual outdoor dining experience.
+            <Typography variant='body2' className='text-black-400'>
+            A gathering of various food trucks offering cuisines from all over the world, 
+            including Mexican, Italian, and local specialties. Enjoy live music and a casual outdoor dining experience.
             </Typography>
             <div className='py-2 space-y-2'>
                 <p>{"Kolkata"}</p>

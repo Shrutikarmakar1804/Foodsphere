@@ -1,27 +1,37 @@
-import { Button, Card } from '@mui/material'
+import { Card, CardActions, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
+import DeleteIcon from '@mui/icons-material/Delete';
 import React from 'react'
 
-const OrderCard = ({item,order}) => {
+const EventCard = () => {
   return (
-    <Card className='flex justify-between items-center p-5 mt-5'>
-      <div className='flex items-center space-x-5'>
-      <img
-      className="h-16 w-16" 
-      src={item.food.images[0]} 
-      alt="" 
-      />
-        <div>
-        <p>{item.food.name}</p>
-        <p>₹{item.totalprice}</p>
-        </div>
-      </div>
-      <div>
-        <button  className="cursor-not-allowed text-green-400">{order.orderStatus}</button>
-      </div>
-      
-    </Card>
-    
+    <div>
+      <Card sx={{ width: 345 }}>
+        <CardMedia
+          sx={{ height: 345 }}
+          image="https://cdn.pixabay.com/photo/2021/02/05/11/58/street-food-5984348_1280.jpg"
+          title="Food Truck Festival"
+        />
+        <CardContent>
+          <Typography variant="h5" className="text-blue-500">
+            Food Truck Festival
+          </Typography>
+          <Typography variant="body2" className="text-gray-400">
+            A gathering of various food trucks offering cuisines from all over the world, including Mexican, Italian, and local specialties. Enjoy live music and a casual outdoor dining experience.
+          </Typography>
+          <div className="py-2 space-y-2">
+            <p>Kolkata</p>
+            <p className="text-sm text-green-500">
+              Start Time: 11:00 AM
+            </p>
+            <p className="text-sm text-red-600">
+              End Time: 8:00 PM
+            </p>
+          </div>
+        </CardContent>
+        {/* CardActions section is hidden */}
+      </Card>
+    </div>
   )
 }
 
-export default OrderCard
+export default EventCard;
