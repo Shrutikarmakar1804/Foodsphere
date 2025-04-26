@@ -54,7 +54,7 @@ const CreateRestaurantForm = () => {
         images: values.images,
       };
       console.log("data ---", data);
-      // dispatch(createRestaurant({ data, token: jwt }));
+      dispatch(createRestaurant({ data, token: jwt }));
     },
     });
   const handleImageChange = async(e) => {

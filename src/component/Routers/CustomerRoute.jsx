@@ -26,7 +26,7 @@ const CustomerRoute = () => {
             <Route path='/search' element={<Search/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/my-profile/*' element={<Profile/>}/>
-            <Route path='/payment/success/:id*' element={<PaymentSuccess/>}/>
+            <Route path='/payment/success/:id/*' element={<PaymentSuccess/>}/>
             <Route path="/help" element={<Help />} />
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/about' element={<About/>}/>

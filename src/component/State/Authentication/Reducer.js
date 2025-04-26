@@ -51,7 +51,8 @@ export const authReducer = (state = initialState, action) => {
                 isLoading:false,
                 error:null,
                 favorites:isPresentInFavourites(state.favorites,action.payload)  
-                ? state.favorites.filter((item)=>item.id !== action.payload.id) : [...state.favorites,action.payload]
+                ? state.favorites.filter((item)=>item.id !== action.payload.id)
+                 : [...state.favorites,action.payload]
             };
 
                       case REGISTER_FAILURE:

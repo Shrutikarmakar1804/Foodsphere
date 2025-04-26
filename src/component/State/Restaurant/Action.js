@@ -1,3 +1,4 @@
+import axios from "axios";
 import { api } from "../../config/api";
 import{
 CREATE_EVENT_FAILURE,
@@ -52,12 +53,12 @@ CRAETE_CATEGORY_FAILURE,
     dispatch({type:GET_ALL_RESTAURANT_SUCCESS,payload:data});
     console.log("all restaurant",data);
         } catch(error){
-            console.log("catch error",error);
+            // console.log("catch error",error);
             dispatch({type:GET_ALL_RESTAURANT_FAILURE,payload:error});
             console.log("error",error);
         }
     }}
-export const getRestaurantById=(reqData)=>{
+export const getRestaurantById=(restaurantId,reqData)=>{
         return async (dispatch)=>{
             dispatch({type:GET_RESTAURANT_BY_ID_REQUEST});
             try{
