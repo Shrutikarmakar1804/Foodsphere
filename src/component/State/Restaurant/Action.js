@@ -53,7 +53,7 @@ CRAETE_CATEGORY_FAILURE,
     dispatch({type:GET_ALL_RESTAURANT_SUCCESS,payload:data});
     console.log("all restaurant",data);
         } catch(error){
-            // console.log("catch error",error);
+             console.log("catch error",error);
             dispatch({type:GET_ALL_RESTAURANT_FAILURE,payload:error});
             console.log("error",error);
         }
@@ -93,11 +93,11 @@ dispatch({type:GET_RESTAURANT_BY_USER_ID_SUCCESS,payload:data});
         };
     };
  export const createRestaurant=(reqData)=>{
-        // console.log("token----------",reqData.token);
+         console.log("token----------",reqData.token);
         return async(dispatch)=>{
             dispatch({type:CREATE_RESTAURANT_REQUEST});
             try{
-                const {data}=await axios.post('/admin/restaurants'
+                const {data}=await axios.post('/api/admin/restaurants'
                 ,
                     reqData.data,{
                     headers:{
@@ -117,7 +117,7 @@ export const updateRestaurant=({restaurantId, restaurantData, jwt})=>{
         return async(dispatch)=>{
             dispatch({type:UPDATE_RESTAURANT_STATUS_REQUEST});
             try{
-                const response =await api.put(`/api/admin/restaurants/${restaurantId}`,restaurantData,{
+                const response =await axios.put(`/api/admin/restaurants/${restaurantId}`,restaurantData,{
                     headers:{
                         Authorization:`Bearer ${jwt}`,
         },

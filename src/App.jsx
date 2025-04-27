@@ -8,6 +8,7 @@ import { getUser } from './component/State/Authentication/Action';
 import { findCart } from './component/State/Cart/Action';
 import { getRestaurantById } from './component/State/Restaurant/Action';
 import process from "process";
+import PaymentPage from './component/Payment/PaymentPage';
 
 
 

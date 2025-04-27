@@ -39,11 +39,11 @@ export const Navbar = () => {
   return (
     <>
       <Box 
-        className="px-2 sticky top-0 z-50 py-[.4rem] bg-[#f50057] lg:px-20 flex justify-between"
+        className="px-2 sticky top-0 z-50 py-[.6rem] bg-[#f50057] lg:px-20 flex justify-between"
       >
-        <div className="flex items-center justify-between p-1">
+        <div className="flex items-center justify-between p-2">
           <Link to="/">
-            <img src="https://i.imgur.com/EaVTotc.jpeg" alt="Logo" className="w-10 h-10" />
+            <img src="https://i.imgur.com/EaVTotc.jpeg" alt="Logo" className="w-9 h-9" />
           </Link>
         </div>
 
@@ -62,6 +62,7 @@ export const Navbar = () => {
               </>
             )}
           </div>
+          
 
           {isHome && (
   <>

@@ -1,9 +1,9 @@
 import React from 'react'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import EventIcon from '@mui/icons-material/Event';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
 import LogoutIcon from '@mui/icons-material/Logout';
 import { AddReaction } from '@mui/icons-material';
 import { Divider, Drawer, useMediaQuery } from '@mui/material';
@@ -16,9 +16,9 @@ const menu=[
     {title:"Orders",icon:<ShoppingBagIcon/>},
     {title:"Favorites",icon:<FavoriteIcon/>},
     {title:"Address",icon:<AddReaction/>},
-    {title:"Payments",icon:<AccountBalanceWalletIcon/>},
+    {title:"Refunds",icon:<MonetizationOnIcon/>},
     {title:"Notification",icon:<NotificationsActiveIcon/>},
-    {title:"Events",icon:<EventIcon/>},
+    {title:"Settings",icon:<SettingsIcon/>},
     {title:"Logout",icon:<LogoutIcon/>},
    
 ]

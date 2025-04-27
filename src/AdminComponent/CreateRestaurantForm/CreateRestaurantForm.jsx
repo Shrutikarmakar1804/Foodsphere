@@ -1,11 +1,13 @@
-import { AddPhotoAlternate} from '@mui/icons-material'
-import { Button, CircularProgress, Grid, IconButton, TextField } from '@mui/material'
-import { useFormik } from 'formik'
-import React, { useState } from 'react'
+import { AddPhotoAlternate } from '@mui/icons-material';
+import { Button, CircularProgress, Grid, IconButton, TextField } from '@mui/material';
+import { useFormik } from 'formik';
+import { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import { uploadImageToCloudinary } from '../util/UploadToCloudinary';
 import { useDispatch } from 'react-redux';
 import { createRestaurant } from '../../component/State/Restaurant/Action';
+import { useNavigate } from 'react-router-dom';
+
 
 const initialValues = {
   name: "",
@@ -27,12 +29,14 @@ const initialValues = {
   images:[],
 };
 const CreateRestaurantForm = () => {
-  const [uploadImage, setUploadImage] = useState(false);
-  const dispatch=useDispatch();
-  const jwt=localStorage.getItem("jwt");
-  const formik=useFormik({
+  const navigate = useNavigate();
+
+  const [uploadImage, setUploadImage] = useState(false); // Used in image upload logic
+  const jwt = localStorage.getItem("jwt");
+  const dispatch = useDispatch(); // Ensure dispatch is defined
+  const formik = useFormik({
     initialValues,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       const data = {
         name: values.name,
         description: values.description,
@@ -49,14 +53,25 @@ const CreateRestaurantForm = () => {
           mobile: values.mobile,
           X: values.X,
           instagram: values.instagram,
+          facebook: values.facebook,
         },
         openingHours: values.openingHours,
+        closingHours: values.closingHours,
         images: values.images,
       };
+
       console.log("data ---", data);
-      dispatch(createRestaurant({ data, token: jwt }));
+
+      try {
+         dispatch(createRestaurant({ data, token: jwt }));
+        navigate("/admin/sidebar"); // Change "/admin/sidebar" to your real admin page route
+      } catch (error) {
+        console.error("Failed to create restaurant", error);
+        // You can show an alert or toast here if needed
+      }
     },
-    });
+  });
+
   const handleImageChange = async(e) => {
     const file = e.target.files[0];
     setUploadImage(true)
@@ -65,11 +80,12 @@ const CreateRestaurantForm = () => {
     formik.setFieldValue("images", [...(formik.values.images || []), image])
     setUploadImage(false)
   };
-  const handleRemoveImage=(index) => {
-    const updatedImages = [...formik.values.images]
-    updatedImages.splice(index,1);
-    formik.setFieldValue("images",updatedImages)
-  };
+  const handleRemoveImage = (index) => {
+    const updatedImages = formik.values.images.filter((_, i) => i !== index);
+    formik.setFieldValue("images", updatedImages);
+  }
+  
+  
   return (
     <div className="py-20 px-20 lg:flex itmes-center justify-center min-h-screen">
      <div className="lg:max-w-4xl">

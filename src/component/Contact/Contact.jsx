@@ -42,9 +42,7 @@ const ContactPage = () => {
         <div className="space-y-8">
           <div>
             <h1 className="text-4xl font-bold text-gray-800 mb-2">Customer Support</h1>
-            <p className="text-lg">
-              Email: <span className="text-pink-600 font-semibold">foodsphere@gmail.com</span>
-            </p>
+            
           </div>
 
           <div>
@@ -61,6 +59,16 @@ const ContactPage = () => {
             <p className="text-gray-600">
               123 Food Street, Food City, FC 12345
             </p>
+            <p className="text-gray-600">
+              Phone: <span className="text-pink-600 font-semibold">+91 9867574422</span>
+            </p>
+            <p className="text-gray-600">
+              Whatsapp: <span className="text-pink-600 font-semibold">+91 73456891</span>
+            </p>
+            <p className="text-gray-600">
+              Email: <span className="text-pink-600 font-semibold">foodsphere@gmail.com</span>
+            </p>
+
             <button className="mt-4 px-5 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold shadow-lg">
               Get Directions
             </button>

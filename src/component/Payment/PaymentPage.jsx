@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { InfoOutlined } from "@mui/icons-material";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   Box,
   Button,
   Card,
-  CardContent,
   Divider,
   FormControlLabel,
   Switch,
@@ -11,9 +12,19 @@ import {
   Typography,
   Checkbox,
 } from "@mui/material";
-import { InfoOutlined } from "@mui/icons-material";
+
+
 
 export default function PaymentPage() {
+  const navigate = useNavigate();
+
+  const handleConfirmOrder = () => {
+    setTimeout(() => {
+      navigate('/payment-success');
+    }, 1000); 
+  };
+  const location = useLocation();
+  const totalAmount = location.state?.total || 0;
   const [recurring, setRecurring] = useState(false);
 
   
@@ -35,20 +46,12 @@ export default function PaymentPage() {
         <Box flex={2} pr={4}>
           {/* VAT and PO Number */}
           <Box display="flex" gap={2} mb={3}>
-            <TextField
-              label="VAT Number (optional)"
-              fullWidth
-              size="small"
-            />
-            <TextField
-              label="PO Number (optional)"
-              fullWidth
-              size="small"
-            />
+            
+            
           </Box>
 
           {/* Payment Method */}
-          <Typography variant="h6" mb={2}>
+          <Typography variant="h3" mb={2}>
             Payment Method
           </Typography>
 
@@ -72,7 +75,7 @@ export default function PaymentPage() {
                 backgroundColor: "#fff",
               }}
             >
-              🅥
+              
             </Box>
             <Box
               sx={{
@@ -82,7 +85,7 @@ export default function PaymentPage() {
                 backgroundColor: "",
               }}
             >
-              🅟
+              
             </Box>
             <Box
               sx={{
@@ -92,7 +95,7 @@ export default function PaymentPage() {
                 backgroundColor: "#fff",
               }}
             >
-              🅿️
+              🅿
             </Box>
           </Box>
 
@@ -171,35 +174,28 @@ export default function PaymentPage() {
 
           <Box display="flex" justifyContent="space-between" mb={1}>
             <Typography>Balance amount:</Typography>
-            <Typography>€100.00</Typography>
+            <Typography>₹{totalAmount.toFixed(2)}</Typography>
           </Box>
 
           <Box display="flex" justifyContent="space-between" mb={1}>
-            <Typography>VAT (21%):</Typography>
-            <Typography>€21.00</Typography>
+            <Typography>GST:</Typography>
+            <Typography>₹{(totalAmount * 0.21).toFixed(2)}</Typography>
           </Box>
 
           <Divider sx={{ my: 2 }} />
 
           <Box display="flex" justifyContent="space-between" mb={3}>
             <Typography fontWeight="bold">Total:</Typography>
-            <Typography fontWeight="bold">€121.00</Typography>
+            <Typography fontWeight="bold">₹{(totalAmount + totalAmount * 0.21).toFixed(2)}</Typography>
           </Box>
 
-          <Button
-            variant="contained"
-            fullWidth
-            sx={{
-              backgroundColor: "#2563eb",
-              ":hover": { backgroundColor: "#1d4ed8" },
-              borderRadius: 2,
-              py: 1.5,
-              textTransform: "none",
-              fontWeight: "bold",
-            }}
-          >
-            Confirm your order
-          </Button>
+          <button
+        onClick={handleConfirmOrder}
+        className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700"
+      >
+        Confirm your order
+      </button>
+    
         </Box>
       </Card>
     </Box>
